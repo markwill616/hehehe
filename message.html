@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey [Crush's Name]!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+        .emoji {
+            position: absolute;
+            font-size: 24px;
+            animation: float 4s infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, [Crush's Name]!</h1>
+        <p>Are you a <span class="code">Python</span> class? Because you’ve got all the right properties that drive me wild!</p>
+        <p>I’d love to help you with those OOP concepts—after all, every good class needs a supportive partner!</p>
+        <p>And hey, I’m starting to think I might need to send you a <span class="code">text()</span> function, since you never seem to call first!</p>
+        <button class="button" onclick="alert('Can’t wait to help you out!')">Count me in!</button>
+    </div>
+    <script>
+        const emojis = ['💖', '🌟', '😍', '✨', '😊'];
+
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            emoji.classList.add('emoji');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.top = Math.random() * 20 + 'vh'; // Start from a random position in the top 20% of the viewport
+            document.body.appendChild(emoji);
+            setTimeout(() => {
+                emoji.remove();
+            }, 4000); // Remove emoji after 4 seconds
+        }
+        setInterval(createEmoji, 500); // Create an emoji every 500ms
+    </script>
+</body>
+</html>
